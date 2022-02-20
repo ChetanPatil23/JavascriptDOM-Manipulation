@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Project</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <header>
+      <div><h2>Javascript DOM-Manipulation</h2></div>
+    </header>
+    <div class="container">
+      <h2>Challenge 1: Calculate Your Age in Days</h2>
+      <div class="underline"></div>
+
+      <button type="button" onclick="findOut()">Find Out</button>
+      <button type="button" onclick="reset()">Reset</button>
+
+      <div id="flexcont"></div>
+    </div>
+
+    <div class="container">
+      <h2>Challenge 2: Input Text generator - JS</h2>
+      <div class="underline"></div>
+      <button type="button" onclick="generate()">Generate Input</button>
+      <div id="flex-container"></div>
+    </div>
+
+    <div class="container2" id="c2">
+      <h2>Challenge 3: Rock 🚀 Paper 📎 Scissors ✂</h2>
+      <div class="underline"></div>
+      <div id="flexcontainer2">
+        <img
+          src="https://media.baamboozle.com/uploads/images/353774/1619466192_22083.jpeg"
+          alt="Rock"
+          onclick="rpsgame(this)"
+          id="rock"
+        />
+        <img
+          src="https://thumbs.dreamstime.com/b/lined-paper-icon-cartoon-style-isolated-vector-illustration-88208977.jpg"
+          alt="paper"
+          onclick="rpsgame(this)"
+          id="paper"
+        />
+        <img
+          src="https://ak.picdn.net/shutterstock/videos/1036580600/thumb/10.jpg"
+          alt="Scissors"
+          onclick="rpsgame(this)"
+          id="scissors"
+        />
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
