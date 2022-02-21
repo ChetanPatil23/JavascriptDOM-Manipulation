@@ -29,7 +29,8 @@ h2 {
   color: darkslategray;
 }
 .container,
-.container2 {
+.container2,
+.container4 {
   width: 70%;
   border: 1px solid navy;
   border-radius: 8px;
@@ -48,11 +49,33 @@ h2 {
 }
 
 #flex-container,
-#flexcontainer2 {
+#flexcontainer2,
+.flex {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
   padding: 10px 0;
+}
+
+.flex {
+  align-items: center;
+  border: 1px solid gray;
+  border-right: none;
+  border-left: none;
+  padding: 20px 0;
+  margin-top: 20px;
+}
+
+.flex select {
+  padding: 5px 20px;
+}
+
+.flex button {
+  border-radius: 5px;
+  padding: 8px 12px;
+  margin: 10px 0;
+  border: none;
+  color: white;
 }
 
 #flex-container input {
@@ -80,4 +103,14 @@ h2 {
   width: 12%;
   margin: 5px;
   border-radius: 10px;
+}
+
+#btn1 {
+  background-color: darkgreen;
+}
+#btn2 {
+  background-color: darkblue;
+}
+#btn3 {
+  background-color: darkcyan;
 }
