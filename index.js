@@ -110,3 +110,50 @@ function finaldisplay(yourChoice, botChoice, message) {
   document.getElementById("flexcontainer2").appendChild(messageDiv);
   document.getElementById("flexcontainer2").appendChild(botDiv);
 }
+
+//Challenge 4
+function changeButtonColor(btncolor) {
+  let btn1=document.getElementById('btn1');
+  let btn2=document.getElementById('btn2');
+  let btn3=document.getElementById('btn3');
+  // console.log(btncolor.value);
+  let btnArray=[btn1,btn2,btn3];
+  // console.log(btnArray);
+  // let allButtons=document.getElementsByTagName('button');
+  // allButtons[0].classList.remove("red")
+  // allButtons[0].classList.add("green")
+  // console.log(allButtons[0].classList);
+  // let copyButtonColors=[];
+  // for(let i=0;i<allButtons.length;i++){
+  //   copyButtonColors.push(allButtons[i]);
+  // }
+ 
+  if (btncolor.value === "green") {
+    setGreen(btnArray);
+  } else if (btncolor.value === "red") {
+    setRed(btnArray);
+  } 
+  else{
+    setBack(btnArray)
+  }
+}
+
+function setGreen(btnArray) {
+  for(let i=0;i<btnArray.length;i++){
+    btnArray[i].classList.remove('red')
+    btnArray[i].classList.add('green')
+  }
+}
+function setRed(btnArray) {
+  for(let i=0;i<btnArray.length;i++){
+    btnArray[i].classList.remove('green')
+    btnArray[i].classList.add('red')
+  }
+}
+
+function setBack(btnArray){
+  for(let i=0;i<btnArray.length;i++){
+    btnArray[i].classList.remove('green')
+    btnArray[i].classList.remove('red')
+  }
+}

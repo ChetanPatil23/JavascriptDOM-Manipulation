@@ -105,12 +105,20 @@ h2 {
   border-radius: 10px;
 }
 
-#btn1 {
-  background-color: darkgreen;
+.container4 button{
+  border-radius: 5px;
+  padding: 8px 12px;
+  color: black;
+  margin: 10px 0;
+  border: 1px solid gray;
+
 }
-#btn2 {
-  background-color: darkblue;
+
+.red{
+  background-color: red;
+  color:white;
 }
-#btn3 {
-  background-color: darkcyan;
+.green{
+  background-color: green;
+  color:white;
 }
