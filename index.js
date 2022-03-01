@@ -21,7 +21,7 @@ function reset() {
   if (confirmed) {
     document.getElementById("age").remove();
   } else {
-    alert("Please Enter your age by clicking on FindOut button");
+    alert("Please Enter your age first by clicking on FindOut button");
   }
 }
 
@@ -31,6 +31,40 @@ function generate() {
   input.setAttribute("id", "inp-label");
   var div = document.getElementById("flex-container");
   div.appendChild(input);
+}
+
+function clearAll() {
+  document.getElementById("flex-container").innerHTML = "";
+}
+
+//Counter
+
+let count = 0;
+let number = document.getElementById("number");
+let btns = document.getElementsByClassName("btn");
+
+for (let i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function (e) {
+    const target = e.currentTarget.classList;
+    if (target.contains("increase")) {
+      count++;
+    } else if (target.contains("decrease")) {
+      count--;
+    } else {
+      count = 0;
+    }
+    number.textContent = count;
+    if (count > 0) {
+      number.style.color = "green";
+      number.parentElement.style.backgroundColor = "lightgreen";
+    } else if (count < 0) {
+      number.style.color = "maroon";
+      number.parentElement.style.backgroundColor = "tomato";
+    } else {
+      number.style.color = "black";
+      number.parentElement.style.backgroundColor = "lightgray";
+    }
+  });
 }
 
 function rpsgame(selectedOption) {
@@ -113,11 +147,11 @@ function finaldisplay(yourChoice, botChoice, message) {
 
 //Challenge 4
 function changeButtonColor(btncolor) {
-  let btn1=document.getElementById('btn1');
-  let btn2=document.getElementById('btn2');
-  let btn3=document.getElementById('btn3');
+  let btn1 = document.getElementById("btn1");
+  let btn2 = document.getElementById("btn2");
+  let btn3 = document.getElementById("btn3");
   // console.log(btncolor.value);
-  let btnArray=[btn1,btn2,btn3];
+  let btnArray = [btn1, btn2, btn3];
   // console.log(btnArray);
   // let allButtons=document.getElementsByTagName('button');
   // allButtons[0].classList.remove("red")
@@ -127,33 +161,52 @@ function changeButtonColor(btncolor) {
   // for(let i=0;i<allButtons.length;i++){
   //   copyButtonColors.push(allButtons[i]);
   // }
- 
+
   if (btncolor.value === "green") {
     setGreen(btnArray);
   } else if (btncolor.value === "red") {
     setRed(btnArray);
-  } 
-  else{
-    setBack(btnArray)
+  } else {
+    setBack(btnArray);
   }
 }
 
 function setGreen(btnArray) {
-  for(let i=0;i<btnArray.length;i++){
-    btnArray[i].classList.remove('red')
-    btnArray[i].classList.add('green')
+  for (let i = 0; i < btnArray.length; i++) {
+    btnArray[i].classList.remove("red");
+    btnArray[i].classList.add("green");
   }
 }
 function setRed(btnArray) {
-  for(let i=0;i<btnArray.length;i++){
-    btnArray[i].classList.remove('green')
-    btnArray[i].classList.add('red')
+  for (let i = 0; i < btnArray.length; i++) {
+    btnArray[i].classList.remove("green");
+    btnArray[i].classList.add("red");
   }
 }
 
-function setBack(btnArray){
-  for(let i=0;i<btnArray.length;i++){
-    btnArray[i].classList.remove('green')
-    btnArray[i].classList.remove('red')
+function setBack(btnArray) {
+  for (let i = 0; i < btnArray.length; i++) {
+    btnArray[i].classList.remove("green");
+    btnArray[i].classList.remove("red");
   }
 }
+
+//Change Bg color
+
+let bgbtn = document.getElementById("changeBgBtn");
+let color = document.querySelector(".color");
+
+const colorsList = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F"];
+
+bgbtn.addEventListener("click", function () {
+  let hexColor = "#";
+  for (let i = 0; i < 6; i++) {
+    hexColor += colorsList[getRandomValue()];
+  }
+  color.textContent = hexColor;
+  document.body.style.backgroundColor = hexColor;
+});
+
+const getRandomValue = () => {
+  return Math.floor(Math.random() * colorsList.length);
+};

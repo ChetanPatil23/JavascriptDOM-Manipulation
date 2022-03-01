@@ -14,7 +14,7 @@ header {
 }
 
 header div {
-  width: 75%;
+  width: 74%;
   margin: 0px auto;
 }
 
@@ -46,6 +46,12 @@ h2 {
   color: white;
   border: none;
   margin: 10px 0;
+  border: 1px solid black;
+}
+
+button:hover {
+  transform: scale(0.95);
+  cursor: pointer;
 }
 
 #flex-container,
@@ -98,6 +104,16 @@ h2 {
   box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.897);
 }
 
+.counterHeader {
+  color: navyblue;
+  font-size: 25px;
+  border: 1px solid gray;
+  padding: 5px;
+  border-radius: 10px;
+  width: 70%;
+  margin: 0 auto;
+}
+
 .underline {
   border: 1px solid rgb(197, 129, 2);
   width: 12%;
@@ -105,20 +121,46 @@ h2 {
   border-radius: 10px;
 }
 
-.container4 button{
+.container4 button {
   border-radius: 5px;
   padding: 8px 12px;
   color: black;
   margin: 10px 0;
-  border: 1px solid gray;
-
+  border: 1px solid darkmagenta;
 }
 
-.red{
+.flexy {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flexy img {
+  border-radius: 50%;
+}
+.red {
   background-color: red;
-  color:white;
+  color: white;
 }
-.green{
+.green {
   background-color: green;
-  color:white;
+  color: white;
+}
+
+.counterbtngrp .decrease {
+  background-color: maroon;
+  margin: 10px;
+  border: 1px solid red;
+}
+
+.counterbtngrp .reset {
+  background-color: blue;
+  margin: 10px;
+  border: 1px solid darkblue;
+}
+
+.counterbtngrp .increase {
+  background-color: green;
+  margin: 10px;
+  border: 1px solid darkgreen;
 }

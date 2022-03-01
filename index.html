@@ -9,23 +9,44 @@
   </head>
   <body>
     <header>
-      <div><h2>Javascript DOM-Manipulation</h2></div>
+      <div class="flexy">
+        <h2>Javascript DOM-Manipulation</h2>
+        <img
+          src="https://media-exp1.licdn.com/dms/image/C4E0BAQGMkpd7khJwXA/company-logo_200_200/0/1630443963630?e=2159024400&v=beta&t=wBUCY9ipxJ-KNKpztQjUHEmqSrKMse-e0eqeXhBwsM8"
+          alt="image"
+          width="40px"
+          height="40px"
+        />
+      </div>
     </header>
     <div class="container">
       <h2>Challenge 1: Calculate Your Age in Days</h2>
       <div class="underline"></div>
-
-      <button type="button" onclick="findOut()">Find Out</button>
-      <button type="button" onclick="reset()">Reset</button>
+      <div class="flexy">
+        <button type="button" onclick="findOut()">Find Out</button>
+        <button type="button" onclick="reset()">Reset</button>
+      </div>
 
       <div id="flexcont"></div>
     </div>
 
     <div class="container">
-      <h2>Challenge 2: Input Text generator - JS</h2>
+      <h2>Challenge 2: Input Text generator & Counter - JS</h2>
       <div class="underline"></div>
-      <button type="button" onclick="generate()">Generate Input</button>
+      <div class="flexy">
+        <button type="button" onclick="generate()">Generate Input</button>
+        <button type="button" onclick="clearAll()">Clear All</button>
+      </div>
       <div id="flex-container"></div>
+      <hr />
+      <div style="text-align: center; margin-top: 25px">
+        <h3 class="counterHeader">Counter : <span id="number">0</span></h3>
+        <div class="counterbtngrp">
+          <button class="btn decrease">Decrease</button>
+          <button class="btn reset">Reset</button>
+          <button class="btn increase">Increase</button>
+        </div>
+      </div>
     </div>
 
     <div class="container2" id="c2">
@@ -53,14 +74,11 @@
       </div>
     </div>
     <div class="container4">
-      <h2>Challenge 4: Change button colours</h2>
+      <h2>Challenge 4: Change button colours and background color</h2>
       <div class="underline"></div>
       <div class="flex">
         <form>
-          <select
-            id="selectedopt"
-            onchange="changeButtonColor(this)"
-          >
+          <select id="selectedopt" onchange="changeButtonColor(this)">
             <option value="select">Select</option>
             <option value="red">Red</option>
             <option value="green">Green</option>
@@ -69,6 +87,12 @@
         <button type="button" id="btn1">Button-1</button>
         <button type="button" id="btn2">Button-2</button>
         <button type="button" id="btn3">Button-3</button>
+      </div>
+      <div style="text-align: center; margin-top: 25px">
+        <h3>Background Color : <span class="color">#ffffff</span></h3>
+        <button id="changeBgBtn" style="background-color: navyblue">
+          Change Background
+        </button>
       </div>
     </div>
 
