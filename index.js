@@ -24,6 +24,44 @@ function reset() {
     alert("Please Enter your age first by clicking on FindOut button");
   }
 }
+//Check Dates
+const handleForm = document.querySelector("#dateForm");
+const days = document.getElementById("days");
+const hours = document.getElementById("hours");
+const datestatus = document.getElementById("datestatus");
+
+handleForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const dt1 = new Date(document.getElementById("date1").value);
+  const dt2 = new Date(document.getElementById("date2").value);
+
+  const time_in_ms = dt2.getTime() - dt1.getTime();
+  const ms_in_day = 24 * 3600 * 1000;
+  let days_count = time_in_ms / ms_in_day;
+
+  let total_hours = 0;
+  let status = "";
+  let total_days = 0;
+
+  if (days_count < 0) {
+    status = "Start date should not be greater than end date";
+    document.getElementById("date1").style.border = "1.5px solid red";
+    document.getElementById("date2").style.border = "1.5px solid red";
+    datestatus.style.color = "red";
+  } else if (days_count > 0) {
+    status = "Looks good ..! Start date is less than end date";
+    total_hours = days_count * 24;
+    total_days = days_count;
+    document.getElementById("date1").style.border = "1px solid black";
+    document.getElementById("date2").style.border = "1px solid black";
+    datestatus.style.color = "darkgreen";
+  } else {
+    status = "Oops..! Start date is same as that of end date";
+  }
+  datestatus.innerHTML = status;
+  days.textContent = total_days;
+  hours.innerText = total_hours;
+});
 
 function generate() {
   var input = document.createElement("input");
