@@ -115,6 +115,64 @@
       </div>
     </div>
 
+    <div class="container5">
+      <h2>Challenge 5: Form Validation</h2>
+      <div class="underline"></div>
+      <form id="form">
+        <h3>Registration Form</h3>
+        <div class="input-control">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" />
+          <div class="error"></div>
+        </div>
+        <div class="input-control">
+          <label for="email">Email</label>
+          <input type="text" id="email" name="email" />
+          <div class="error"></div>
+        </div>
+        <div class="input-control">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" />
+          <div class="flex-items">
+            <input type="checkbox" id="checkbox" />&nbsp;<span>Show password</span>
+          </div>
+          <div class="error"></div>
+        </div>
+        <div class="input-control">
+          <label for="confirmpass">Confirm Password</label>
+          <input type="password" id="confirmpass" name="confirmpass" />
+          <div class="flex-items">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDJ7BexanqGfCobYZHr9qh9MyUGagw4pm5tXiwzOSO3dlKWyI544Dc1y2fON7Nwkd1x1E&usqp=CAU"
+              alt="Show"
+              width="15px"
+              height="15px"
+              id="toggle"
+            />&nbsp;
+            <span>Toggle password</span>
+          </div>
+          <div class="error"></div>
+        </div>
+        <div class="input-control">
+          <label for="country">Country</label>
+          <select id="country" name="country">
+            <option value="">Select</option>
+            <option value="india">INDIA</option>
+            <option value="usa">USA</option>
+          </select>
+          
+          <div class="error"></div>
+        </div>
+        <div class="input-control">
+          <label for="state">State</label>
+          <input type="text" id="state" name="state" />
+          <div class="error"></div>
+        </div>
+        <button type="submit" id="submit">Sign up</button>
+      </form>
+    </div>
+    <img class='scrolltop' src="https://static1.squarespace.com/static/5681f73d9cadb697dd844eff/t/56dbcffbfe5f74d4d57b7bd8/1457246203795/1000w/" alt="top" height="50" width="50"/>
+
     <script src="index.js"></script>
   </body>
 </html>

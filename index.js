@@ -54,9 +54,11 @@ handleForm.addEventListener("submit", (e) => {
     total_days = days_count;
     document.getElementById("date1").style.border = "1px solid black";
     document.getElementById("date2").style.border = "1px solid black";
-    datestatus.style.color = "darkgreen";
-  } else {
+    datestatus.style.color = "green";
+  } else if (days_count === 0) {
     status = "Oops..! Start date is same as that of end date";
+  } else {
+    status = "Please select dates";
   }
   datestatus.innerHTML = status;
   days.textContent = total_days;
@@ -248,3 +250,108 @@ bgbtn.addEventListener("click", function () {
 const getRandomValue = () => {
   return Math.floor(Math.random() * colorsList.length);
 };
+
+//Challenge-5 Form Validation
+const form = document.querySelector("#form");
+const username = document.querySelector("#username");
+const email = document.querySelector("#email");
+const password = document.querySelector("#password");
+const confirmpass = document.querySelector("#confirmpass");
+const checkbox = document.getElementById("checkbox");
+const toggleimg = document.getElementById("toggle");
+const scrolltotop = document.querySelector(".scrolltop");
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  validate();
+});
+
+checkbox.addEventListener("click", () => {
+  if (checkbox.checked) password.type = "text";
+  else password.type = "password";
+});
+
+toggleimg.addEventListener("mousedown", () => {
+  confirmpass.type = "text";
+});
+toggleimg.addEventListener("mouseup", () => {
+  confirmpass.type = "password";
+});
+
+scrolltotop.addEventListener("click", () => {
+  document.documentElement.scrollTop = 0;
+});
+
+function validate() {
+  const usernameval = username.value.trim();
+  const emailval = email.value.trim();
+  const password1 = password.value.trim();
+  const password2 = confirmpass.value.trim();
+
+  if (usernameval === "") {
+    setError(username, "Username cannot be blank");
+    return;
+  } else {
+    setSuccess(username);
+  }
+
+  if (emailval === "") {
+    setError(email, "This field is mandatory");
+    return;
+  } else if (!isValidEmail(emailval)) {
+    setError(email, "Email is not valid");
+    return;
+  } else {
+    setSuccess(email);
+  }
+
+  if (password1 === "") {
+    setError(password, "Please fill in the password");
+    return;
+  } else if (password1.length <= 4) {
+    setError(
+      password,
+      "Password too short ( Please set it to minimum 6 characters )"
+    );
+    return;
+  } else {
+    setSuccess(password);
+  }
+
+  if (password2 === "") {
+    setError(confirmpass, "Please fill in this field");
+    return;
+  } else if (password2 !== password1) {
+    setError(confirmpass, "Passwords not matching..");
+    return;
+  } else {
+    setSuccess(confirmpass);
+  }
+}
+
+function setError(element, message) {
+  // element.parentElement.classList.remove("success");
+  // element.parentElement.classList.add("error");
+  const parentElement = element.parentElement;
+  parentElement.classList.remove("success");
+  parentElement.classList.add("error");
+  const errorDiv = parentElement.querySelector(".error");
+  // console.log(errorDiv);
+  // console.log(element.nextElementSibling);
+  // element.nextElementSibling.innerHTML = message;
+  errorDiv.innerHTML = message;
+}
+
+function setSuccess(element) {
+  const parentElement = element.parentElement;
+  parentElement.classList.add("success");
+  parentElement.classList.remove("error");
+  const errorDiv = parentElement.querySelector(".error");
+  errorDiv.innerHTML = "";
+}
+
+function isValidEmail(email) {
+  return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
+    email
+  );
+}
