@@ -260,6 +260,38 @@ const confirmpass = document.querySelector("#confirmpass");
 const checkbox = document.getElementById("checkbox");
 const toggleimg = document.getElementById("toggle");
 const scrolltotop = document.querySelector(".scrolltop");
+const country = document.getElementById("country");
+const state = document.getElementById("state");
+
+let optionsArray = [];
+let optionsToBeInserted;
+country.addEventListener("change", () => {
+  if (country.value === "india") {
+    optionsArray = [
+      "Delhi",
+      "Maharashtra",
+      "Hyderabad",
+      "Andhra Pradesh",
+      "Karnataka"
+    ].sort();
+  } else if (country.value === "usa") {
+    optionsArray = [
+      "Washington",
+      "Texas",
+      "California",
+      "Florida",
+      "Alabama"
+    ].sort();
+  }
+
+  optionsToBeInserted = optionsArray
+    .map((opt) => {
+      return `<option value=${opt.toLowerCase()}>${opt.toUpperCase()}</option>`;
+    })
+    .join("\n");
+
+  state.innerHTML = optionsToBeInserted;
+});
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();

@@ -256,3 +256,7 @@ select {
   bottom: 10px;
   border-radius: 50%;
 }
+
+#toggle{
+  cursor:pointer;
+}
